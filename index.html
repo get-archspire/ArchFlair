@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchFlair: Architecture Jobs & Internships</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3/dist/fuse.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ArchFlair</h1>
+        <nav>
+            <button id="postJob" onclick="window.open('https://ga1j3kdza0b.typeform.com/to/sebh6PBI')">Post a Job</button>
+        </nav>
+    </header>
+
+    <main id="mainContent">
+        <section id="homepage">
+            <h2>Find your next architectural internship or job</h2>
+            <input type="text" placeholder="Search for jobs by title, company, or location..." id="searchBar">
+            <div id="featuredJobs">
+                <h3>Featured Jobs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Position Title</th>
+                            <th>Company Name</th>
+                            <th>Job Type</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobList"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="job-detail-popup" id="jobDetailPopup">
+            <div class="popup-content">
+                <span class="close" onclick="toggleJobDetailPopup()">&times;</span>
+                <h2 id="jobTitle"></h2>
+                <p id="jobType"></p>
+                <p id="jobLocation"></p>
+                <p id="jobDescription"></p>
+                <p>Website: <a id="jobWebsite" target="_blank"></a></p>
+                <p>Email: <a id="jobEmail"></a></p>
+                <p>Salary: <a id="jobSalary"></a></p>
+                <a id="jobApply" class="apply-link" target="_blank">Apply</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;600&display=swap');
+
+body {
+    font-family: 'SF Pro', sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    width: calc(100% - 40px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #000;
+}
+
+nav button {
+    background: #000;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    padding: 40px;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.6em;
+    margin-top: 0;
+    font-weight: 600;
+    color: #000;
+}
+
+#searchBar {
+    font-size: 1.1em;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #f9fafb;
+    color: #000;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+#searchBar:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px dotted #ccc;
+}
+
+thead {
+    background-color: #f1f1f1;
+    border-bottom: 2px dotted #ccc;
+}
+
+thead th {
+    font-weight: 600;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+    border-right: none;
+}
+
+tbody tr {
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px dotted #ccc;
+    position: relative;
+}
+
+tbody tr:hover td .apply-link {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+tbody td .apply-link {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.8em;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    opacity: 0;
+}
+
+tbody td .apply-link:hover {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-detail-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    border: 1px dotted #ccc;
+}
+
+.popup-content h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+}
+
+.popup-content p {
+    margin: 10px 0;
+}
+
+.popup-content a {
+    color: #000;
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 10px;
+    background-color: transparent;
+    transition: none;
+}
+
+/* Specific styles for the apply button and external link button */
+.popup-content a#jobApply,
+.popup-content a#jobExternalButton {
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.popup-content a#jobApply:hover,
+.popup-content a#jobExternalButton:hover {
+    background-color: #FF4500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for email link */
+.popup-content a#jobEmail {
+    background-color: transparent;
+    color: #000;
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.popup-content a#jobEmail:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Styles for salary link without underline */
+.popup-content a#jobSalary {
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.popup-content a#jobSalary:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
